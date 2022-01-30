@@ -1,0 +1,56 @@
+@include mq(small){
+    .main{
+        width:100%;
+        height:100%;
+        display:flex;
+        flex-direction: column;
+       
+        
+    }
+    .navbarMain{
+        margin-top:3%;
+      height:15%;
+      width:100%;
+      border:1px solid red;
+      display:flex;
+    
+      
+
+    }
+    .words{
+  
+     
+     flex-grow:1;
+     display:flex;
+     justify-content: center;
+     border:1px solid black;
+     height:50%;
+     align-items: center;
+    }
+    .words:hover{
+       
+    }
+    .books{
+        border:1px solid black;
+        height:10%;
+        flex-grow:1;
+        display:flex;
+        justify-content: center;
+        height:50%;
+        align-items: center;
+    }
+    .task{
+        height:10%;
+        flex-grow:1;
+        display:flex;
+        justify-content: center;
+        height:50%;
+        align-items: center;
+        border:1px solid black;
+       
+    }
+    .outletMain{
+flex-grow:1;
+
+    }
+}
