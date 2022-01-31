@@ -2,7 +2,7 @@ import React,{useState,useEffect,useRef} from 'react';
 import NavBar from './components/NavBar';
 import { Routes,Route,Outlet } from 'react-router-dom';
 import Home from './components/Home';
-import Words from './components/Words';
+import Vocabulary from './components/Vocabulary';
 import './css/style.css'
 import Main from './components/Main';
 import Books from './components/Books';
@@ -26,7 +26,7 @@ containerRef.current.classList.remove("containerDay")
 <Routes>
   <Route path="/home" element={<Home/>}></Route>
   <Route path="/main" element={<Main/>}>
-    <Route path="words" element={<Words/>}/>
+    <Route path="words" element={<Vocabulary/>}/>
     <Route path="books" element={<Books/>}/>
   </Route>
 </Routes>

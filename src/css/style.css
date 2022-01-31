@@ -270,4 +270,92 @@
             flex-grow: 1;
   }
 }
+
+@media (min-width: 320px) {
+  .vocabulary {
+    background-color: white;
+    margin-top: 3%;
+    height: 90%;
+  }
+  .addWord {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 15vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .input1 {
+    text-align: center;
+    color: blue;
+    font-size: 1.4rem;
+    border: none;
+    border-bottom: 1.5px solid black;
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+  }
+  .input2 {
+    text-align: center;
+    color: blue;
+    font-size: 1.4rem;
+    border: none;
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+  }
+  .btnAdd {
+    border: none;
+    color: darkblue;
+    font-size: 1.2rem;
+    border-top: 1px double black;
+    background-color: #9999ff;
+  }
+  .kit {
+    margin-top: 3%;
+    width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 20% 70% 10%;
+        grid-template-columns: 20% 70% 10%;
+  }
+  .saveWords {
+    border: 1px solid black;
+  }
+  .translateWords {
+    border: 1px solid black;
+  }
+  .delete {
+    border: 1px dotted black;
+    background-color: #9dd7ef;
+  }
+  .voc {
+    font-weight: bold;
+    margin-left: 3%;
+    -webkit-text-stroke: 0.1px green;
+  }
+  .toolTip {
+    width: 80%;
+    height: 30%;
+    border: 3px solid orange;
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
 /*# sourceMappingURL=style.css.map */

@@ -5,7 +5,7 @@ function Main() {
   
 
   <div className="navbarMain">
-    <div className="words"><NavLink to="words">Words</NavLink></div>
+    <div className="words"><NavLink to="words">Vocabulary</NavLink></div>
     <div className="books"><NavLink to="books">Books and Author</NavLink></div>
     <div className="task">Task</div>
    
