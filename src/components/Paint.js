@@ -1,17 +1,18 @@
 import React,{useEffect,useState,useRef, useLayoutEffect} from 'react';
-
+import kosz from '../img/kosz.jpg'
+import pedzel from '../img/pedzel.jpg'
 function Paint() {
   const [isDraw,setIsDraw]=useState(false)
 const [sizeSquare,setSizeSquare]=useState({width:100,height:100})
   const [suwak,setSuwak]=useState(false)
   const [contour,setContour]=useState("black")
   const [obrys,setObrys]=useState(false)
-  const [color,setColor]=useState("black")
+  const [color,setColor]=useState("red")
   const [strokeColor,setStrokeColor]=useState(false)
   const [sizeLine,setSizeLine]=useState(10)
   const [drawSquare,setDrawSquare]=useState(false)
   const [drawPencil,setDrawPencil]=useState(true)
-  const [drawCircle,setDrawCircle]=useState(true)
+  const [drawCircle,setDrawCircle]=useState(false)
   const [btnDis,setBtnDis]=useState(false)
   const [inputDis,setInputDis]=useState(false)
   const canvasRef=useRef(null)
@@ -40,9 +41,10 @@ useEffect(()=>{
 useEffect(()=>{
 
   ctxRef.current.strokeStyle=contour
-  ctxRef.current.lineWidth=sizeLine
   ctxRef.current.fillStyle=color
-},[color,sizeLine])
+  ctxRef.current.lineWidth=sizeLine
+  
+},[color,sizeLine,contour])
 const startDrawing=(e)=>{
  
 let cx=e.nativeEvent.offsetX
@@ -54,16 +56,17 @@ if(drawSquare===true && obrys===false){
 }
 else if(drawSquare===true && obrys===true){
  
-  ctxRef.current.strokeStyle = contour;
  
-  ctxRef.current.fillRect(cx,cy,sizeSquare.width,sizeSquare.height)
-  ctxRef.current.strokeRect()
+ 
+  ctxRef.current.strokeRect(cx,cy,sizeSquare.width,sizeSquare.height)
+
  
 }
 setIsDraw(true)
 if(drawPencil===true){
 ctxRef.current.beginPath()
 ctxRef.current.moveTo(cx,cy)
+
 }
 if(drawCircle===true && obrys===false){
   ctxRef.current.beginPath()
@@ -100,7 +103,10 @@ let cx=e.nativeEvent.offsetX
 let cy=e.nativeEvent.offsetY
 if(drawPencil===true){
 ctxRef.current.lineTo(cx,cy)
+ctxRef.current.fillStyle=color
 ctxRef.current.stroke()
+
+
 
     
 }
@@ -117,7 +123,7 @@ console.log(sizeLine)
 const changeSizeLineAdd=()=>{
   console.log(sizeLine)
   setSizeLine((prevLine)=>prevLine+1)
-  if(sizeLine>0){
+  if(sizeLine>-1){
     setBtnDis(false)
   }
 }
@@ -153,10 +159,14 @@ if(strokeColor===false){
 }
 
 }
-console.log(strokeColor)
+const cleanPage=()=>{
+  ctxRef.current.clearRect(0,0,10000,10000)
+}
+console.log(color)
   return <div className="paint" ref={paintRef}>
-  <div className="dashboard" onMouseMove={()=>draw()} ref={navRef}>
+  <div className="dashboard"  ref={navRef}>
     <div className="colorsToPaintContainer">
+   
     <button className="colorToPaint" style={{backgroundColor:"red"}} onClick={()=>setColor("red")}></button>
     <button className="colorToPaint" style={{backgroundColor:"green"}} onClick={()=>setColor("green")}></button>
     <button className="colorToPaint" style={{backgroundColor:"blue"}} onClick={()=>setColor("blue")}></button>
@@ -179,21 +189,26 @@ console.log(strokeColor)
     <button className="colorToPaint" style={{backgroundColor:"greenyellow"}} onClick={()=>setColor("greenyellow")}></button>
     <button className="colorToPaint" style={{backgroundColor:"indigo"}} onClick={()=>setColor("indigo")}></button>
     <button className="colorToPaint" style={{backgroundColor:"peru"}} onClick={()=>setColor("peru")}></button>
-    </div>
+  
+    <br/>
     <div className="widthLine">
       <button disabled={btnDis} onClick={()=>changeSizeLineSub()}>←</button><span> LINE <em >{sizeLine}</em> WIDTH</span>
       <button  onClick={()=>changeSizeLineAdd()} >→</button>
     </div>
+    </div>
+ 
+    
+  
     <div className="shapes" >
    
-      <button onClick={()=>activeSquare()}>square</button>
-      <button onClick={()=>activeCircle()}>circle</button>
-      <label style={{border:"2px solid black"}}>Contour
+      <button onClick={()=>activeSquare()}style={{width:"50%"}}>square☐</button>
+      <button onClick={()=>activeCircle()} style={{width:"50%"}}>circle☯</button>
+      <label style={{border:"2px solid black",color:"darkblue",display:"block",textAlign:"center",fontSize:"1rem",width:"100%"}}>Contour
       <input type="checkbox" value={obrys} onChange={()=>setObrys(!obrys)}></input>
       </label>
-      <label style={{border:"2px solid black"}}>Color Contour
-      <button onClick={()=>colorPaletStroke()}>x</button>
-      </label>
+      
+      <button onClick={()=>colorPaletStroke()} style={{width:"100%"}}><span style={{fontSize:"1rem",fontWeight:"bold",color:"darkblue"}}>Color↓Pen</span></button>
+      
       <div className="suwak">
        <input type="number" value={sizeSquare.width} onChange={(e)=>setSizeSquare({...sizeSquare,width:e.target.value})} placeholder="width" style={{width:"50%",textAlign:"center"}}></input>
        <input type="number" disabled={inputDis} value={sizeSquare.height} onChange={(e)=>setSizeSquare({...sizeSquare,height:e.target.value})} placeholder="height" style={{width:"50%",textAlign:"center"}}></input>
@@ -227,7 +242,8 @@ console.log(strokeColor)
      
     
     </div>
-    <button onClick={()=>activePencil()}>pencil</button>
+    <img onClick={()=>activePencil()} className="kitTool" src={pedzel}alt="pedzel" ></img>
+<img onClick={()=>cleanPage()} className="kitTool"  src={kosz} alt="kosz"></img>
     </div>
   <canvas id="canvas1"
  

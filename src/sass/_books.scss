@@ -1,0 +1,27 @@
+.bookContainer{
+width:80%;
+   
+    margin:0 auto;
+    overflow-y:scroll;
+  
+    
+}
+.h1TitleBook{
+    text-align:center;
+    -webkit-text-stroke:1px red;
+    margin-top:2%;
+}
+.bookExample{
+    display:flex;
+}
+.bookImg{
+    width:15%;
+    
+}
+.titleBook{
+    color:darkred;
+}
+.describeBook{
+    font-size:1.5rem;
+    color:darken(gray,20%)
+}

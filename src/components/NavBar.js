@@ -27,7 +27,7 @@ else{
   return (
       <nav>
           <ul>
-              <NavLink to="/home" className={({isActive})=>isActive?"homeActive":"homeUnactive"}><li>Home</li></NavLink>
+              <NavLink to="/" className={({isActive})=>isActive?"homeActive":"homeUnactive"}><li>Home</li></NavLink>
               <NavLink to="/main" className={({isActive})=>isActive?"homeActive":"homeUnactive"}><li>Main</li></NavLink>
           </ul>
          <div className="navThirdPart"><div className="toggle"><div className="turner" ref={turnerRef} onClick={()=>turnOn()}></div></div></div>

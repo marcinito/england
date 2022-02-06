@@ -16,7 +16,7 @@
         
         background-color: lighten(black,10%);
         transition:3s;
-        color:white;
+        color:darkorange;
     }
     .containerDay{
         transition:background-color 3s;
@@ -64,5 +64,10 @@ main{
     justify-content: center;
     align-items: center;
    
+}
+.linkss{
+    color:white;
+    font-weight:bold;
+    letter-spacing: 4px;
 }
 }
