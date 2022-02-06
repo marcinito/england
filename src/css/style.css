@@ -171,8 +171,8 @@
   .off {
     -webkit-transition: 3s;
     transition: 3s;
-    -webkit-transform: translateX(10%);
-            transform: translateX(10%);
+    -webkit-transform: translateX(17%);
+            transform: translateX(17%);
   }
 }
 
@@ -315,28 +315,11 @@
   .kit {
     margin-top: 3%;
     width: 100%;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 20% 70% 10%;
-        grid-template-columns: 20% 70% 10%;
-  }
-  .saveWords {
-    border: 1px solid black;
-  }
-  .translateWords {
-    border: 1px solid black;
-  }
-  .delete {
-    border: 1px dotted black;
-    background-color: #9dd7ef;
-  }
-  .voc {
-    font-weight: bold;
-    margin-left: 3%;
-    -webkit-text-stroke: 0.1px green;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   .toolTip {
     width: 80%;
@@ -357,5 +340,127 @@
         -ms-flex-align: center;
             align-items: center;
   }
+  .saveWord {
+    width: 100%;
+    list-style-type: none;
+    border: 3px solid orange;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .aW {
+    font-weight: bold;
+    border: 1px solid black;
+    -webkit-box-flex: 0.5;
+        -ms-flex-positive: 0.5;
+            flex-grow: 0.5;
+  }
+  .tW {
+    font-weight: bold;
+    border: 1px solid black;
+    -webkit-box-flex: 1.5;
+        -ms-flex-positive: 1.5;
+            flex-grow: 1.5;
+  }
+  .btnAddWord {
+    -ms-flex-preferred-size: 50px;
+        flex-basis: 50px;
+  }
+}
+
+.paint {
+  width: 100vw;
+  height: 80vh;
+  position: relative;
+  top: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+}
+
+.dashboard {
+  width: 100vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #9a9a9a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#canvas1 {
+  border: 3px solid black;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.colorsToPaintContainer {
+  width: 10%;
+  border: 1px solid black;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
+
+.colorToPaint {
+  width: 15px;
+  height: 15px;
+  border: 1px solid black;
+}
+
+.widthLine {
+  width: 10%;
+  border: 1px solid black;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.widthLine span {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.widthLine button {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.widthLine em {
+  color: cyan;
+  font-weight: bold;
+  -webkit-text-stroke: 1px red;
+}
+
+.shapes {
+  width: 10%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: 3px solid green;
+}
+
+.suwak {
+  border: 1px solid black;
+  height: 10%;
+  width: 100%;
+}
+
+.suwakBtn {
+  position: relative;
 }
 /*# sourceMappingURL=style.css.map */

@@ -3,6 +3,7 @@
         background-color: white;
         margin-top:3%;
         height:90%;
+       
     }
     .addWord{
         width:100%;
@@ -37,28 +38,13 @@
     .kit{
         margin-top:3%;
         width:100%;
-        height:fit-content;
-        display:grid;
-        grid-template-columns: 20% 70% 10%;
+     display:flex;
+     flex-wrap:wrap;
+   
      
     }
-    .saveWords{
-border:1px solid black;
 
-    }
-    .translateWords{
-        border:1px solid black
 
-    }
-    .delete{
-border:1px dotted black;
-background-color: lighten(skyblue,5%);
-    }
-    .voc{
-        font-weight:bold;
-        margin-left:3%;
-        -webkit-text-stroke:0.1px green;
-    }
     .toolTip{
         width:80%;
         height:30%;
@@ -71,4 +57,24 @@ background-color: lighten(skyblue,5%);
         justify-content: center;
         align-items: center;
     }
+    .saveWord{
+        width:100%;
+        list-style-type:none;
+        border:3px solid orange;
+        display:flex;
+    }
+   .aW{
+font-weight:bold;
+border:1px solid black;
+flex-grow:0.5;
+
+   }
+   .tW{
+    font-weight:bold;
+    border:1px solid black;
+    flex-grow:1.5;
+   }
+   .btnAddWord{
+       flex-basis:50px;
+   }
 }

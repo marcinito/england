@@ -1,0 +1,72 @@
+.paint{
+    width:100vw;
+    height:80vh;
+    position:relative;
+    top:0;
+    box-sizing: border-box;
+    overflow:hidden;
+}
+.dashboard{
+    width:100vw;
+    height:fit-content;
+    background-color: lighten(gray,10%);
+    display:flex;
+ 
+}
+#canvas1{
+    border:3px solid black;
+
+  
+    object-fit: contain;
+ 
+}
+.colorsToPaintContainer{
+    width:10%;
+    border:1px solid black;
+    height:fit-content;
+    display:flex;
+    flex-wrap:wrap;
+    align-content:space-between
+    
+}
+.colorToPaint{
+    width:15px;
+    height:15px;
+    border:1px solid black;
+    
+}
+.widthLine{
+    width:10%;
+
+    border:1px solid black;
+    background-color: white;
+    display:flex;
+    justify-content: center;
+ 
+}
+.widthLine span{
+ 
+    justify-content: center;
+}
+.widthLine button{
+    flex-grow:1;
+}
+.widthLine em{
+    color:cyan;
+    font-weight:bold;
+    -webkit-text-stroke:1px red;
+}
+.shapes{
+    width:10%;
+    height:fit-content;
+    border:3px solid green;
+}
+
+.suwak{
+    border:1px solid black;
+    height:10%;
+    width:100%;
+}
+.suwakBtn{
+    position:relative;
+}

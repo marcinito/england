@@ -1,0 +1,1 @@
+export {subWordToLearn} from './actionCreators/actionCreator'

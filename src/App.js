@@ -6,6 +6,7 @@ import Vocabulary from './components/Vocabulary';
 import './css/style.css'
 import Main from './components/Main';
 import Books from './components/Books';
+import Paint from './components/Paint';
 function App() {
   const containerRef=useRef()
   const [bgc,setBgc]=useState(false)
@@ -28,6 +29,7 @@ containerRef.current.classList.remove("containerDay")
   <Route path="/main" element={<Main/>}>
     <Route path="words" element={<Vocabulary/>}/>
     <Route path="books" element={<Books/>}/>
+    <Route path="paint" element={<Paint/>}/>
   </Route>
 </Routes>
 <div className="media">
