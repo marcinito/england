@@ -15,7 +15,7 @@
 }
 #canvas1{
     border:3px solid black;
-
+background-color: white;
   
     object-fit: contain;
  
@@ -69,4 +69,17 @@
 }
 .suwakBtn{
     position:relative;
+}
+.palet{
+    width:fit-content;
+    height:fit-content;
+    background-color: lighten(gray,20%);
+    border:5px solid darkblue;
+    position:absolute;
+    opacity:0;
+  
+}
+.paletactive{
+    z-index:1;
+    opacity:1;
 }
