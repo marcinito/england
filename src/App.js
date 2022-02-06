@@ -7,6 +7,7 @@ import './css/style.css'
 import Main from './components/Main';
 import Books from './components/Books';
 import Paint from './components/Paint';
+import CanvasIndex from './components/CanvasIndex';
 function App() {
   const containerRef=useRef()
   const [bgc,setBgc]=useState(false)
@@ -25,17 +26,18 @@ containerRef.current.classList.remove("containerDay")
 
 <main ref={containerRef}>
 <Routes>
-  <Route path="/home" element={<Home/>}></Route>
+  <Route path="/" element={<Home/>}></Route>
   <Route path="/main" element={<Main/>}>
     <Route path="words" element={<Vocabulary/>}/>
+    <Route index element={<CanvasIndex/>}/>
     <Route path="books" element={<Books/>}/>
     <Route path="paint" element={<Paint/>}/>
   </Route>
 </Routes>
 <div className="media">
-  <div className="facebook">FACEBOOK</div>
-  <div className="youtube">YOUTUBE</div>
-  <div className="google">GOOGLE</div>
+  <div className="facebook"><a className="linkss" href="https://www.facebook.com/">FACEBOOK</a></div>
+  <div className="youtube"><a className="linkss" href="https://www.youtube.com/">YOUTUBE</a></div>
+  <div className="google"><a className="linkss" href="https://www.google.pl/">GOOGLE</a></div>
 </div>
   </main>
   </div>;
