@@ -6,7 +6,7 @@ import wladca from '../img/wladca.jpg'
 
 function Books() {
   useLayoutEffect(()=>{
-    bookRef.current.style.height=window.innerHeight/1.2+"px"
+    bookRef.current.style.height=window.innerHeight+"px"
   })
   const bookRef=useRef()
 
@@ -49,6 +49,7 @@ Now they continue their journey alone down the great River Anduin – alone, tha
 To celebrate the release of the first of Peter Jackson’s two-part film adaptation of The Hobbit, THE HOBBIT: AN UNEXPECTED JOURNEY, this second part of The Lord of the Rings is available for a limited time with an exclusive cover image from Peter Jackson’s award-winning trilogy.</p>
 </div>
       </div>
+    <div className="footer"></div>
   </div>;
 }
 

@@ -4,12 +4,13 @@ export const keyHandle=(what)=>{
     }
 }
 
-export const addWordToLearn=(a,b,c)=>{
+export const addWordToLearn=(a,b,c,d)=>{
     return{
         type:"add",
         payload1:a,
         payload2:b,
         payload3:c,
+        payload4:d,
     }
 }
 

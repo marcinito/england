@@ -6,7 +6,7 @@ function Main() {
 
   <div className="navbarMain">
     <div className="words"><NavLink className={({isActive})=>isActive?"activeLinks":"noActiveLink"} to="words">Vocabulary</NavLink></div>
-    <div className="books"><NavLink className={({isActive})=>isActive?"activeLinks":"noActiveLink"} to="books">Books and Author</NavLink></div>
+    <div className="books"><NavLink className={({isActive})=>isActive?"activeLinks":"noActiveLink"} to="books">Books</NavLink></div>
     <div className="task"><NavLink className={({isActive})=>isActive?"activeLinks":"noActiveLink"} to="paint">Paint</NavLink></div>
    
   </div>

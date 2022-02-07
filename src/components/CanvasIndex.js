@@ -7,7 +7,7 @@ function CanvasIndex() {
   class Particle {
     constructor(){
       this.size=Math.floor(Math.random()*15)
-      this.x=Math.floor(Math.random()*window.innerWidth-300)
+      this.x=Math.floor(Math.random()*window.innerWidth)
       this.y=Math.floor(Math.random()*window.innerHeight)
       this.speedX=Math.floor(Math.random()*3-1.5)
       this.speedY=Math.floor(Math.random()*3-1.5)
@@ -30,7 +30,7 @@ this.y+=this.speedY
     const canvas=canvasRef.current
     const ctx=canvas.getContext("2d")
     canvas.width=window.innerWidth
-    canvas.height=window.innerHeight-200
+    canvas.height=window.innerHeight
     ctxRef.current=ctx
 
 

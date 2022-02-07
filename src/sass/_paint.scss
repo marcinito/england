@@ -8,7 +8,7 @@
 }
 .dashboard{
     width:100vw;
-    height:fit-content;
+    height:20%;
     background-color: lighten(gray,10%);
     display:flex;
  
@@ -21,7 +21,7 @@ background-color: white;
  
 }
 .colorsToPaintContainer{
-    width:10%;
+    width:35%;
     border:1px solid black;
     height:fit-content;
     display:flex;
@@ -48,7 +48,7 @@ height:fit-content;
  
 }
 .widthLine span{
- display:flex;
+
     justify-content: center;
 }
 .widthLine button{
@@ -60,26 +60,27 @@ height:fit-content;
     -webkit-text-stroke:1px red;
 }
 .shapes{
-    width:10%;
+    width:30%;
     height:fit-content;
     border:3px solid green;
 }
 
 .suwak{
     border:1px solid black;
-    height:10%;
+    height:15%;
     width:100%;
 }
 .suwakBtn{
     position:relative;
 }
 .palet{
-    width:fit-content;
+    width:40%;
     height:fit-content;
     background-color: lighten(gray,20%);
-    border:5px solid darkblue;
+    border:1px solid darkblue;
     position:absolute;
     opacity:0;
+    z-index:-10;
   
 }
 .paletactive{
@@ -87,7 +88,11 @@ height:fit-content;
     opacity:1;
 }
 .kitTool{
-width:5%;
-height:100%;
+width:8%;
+height:70%;
 border:1px solid black;
+}
+.magicItem{
+    display:flex;
+    flex-direction: column;
 }

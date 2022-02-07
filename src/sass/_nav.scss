@@ -10,8 +10,11 @@
 
 nav ul{
     display:flex;
-    width:60%;
+    width:100%;
     list-style-type:none;
+    font-size:1.3rem;
+    font-weight: bold;
+    
    
 }
 nav ul a{
@@ -30,7 +33,7 @@ nav ul a{
     justify-content: flex-end;
     }
     .toggle{
-      width:10%;
+      width:35%;
         display:flex;
         align-items: center;
         border:2px solid yellow;
@@ -43,6 +46,7 @@ nav ul a{
         width:40%;
         height:80%;
         border-radius:50px;
+        border:2px solid black;
         background-color: red;
     }
     .on{

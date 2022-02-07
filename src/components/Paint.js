@@ -5,11 +5,23 @@ function Paint() {
   const [isDraw,setIsDraw]=useState(false)
 const [sizeSquare,setSizeSquare]=useState({width:100,height:100})
   const [suwak,setSuwak]=useState(false)
+  const [magicPencilActive,setMagicPencilActive]=useState(false)
   const [contour,setContour]=useState("black")
+ 
   const [obrys,setObrys]=useState(false)
   const [color,setColor]=useState("red")
   const [strokeColor,setStrokeColor]=useState(false)
   const [sizeLine,setSizeLine]=useState(10)
+  /*MAGICPENCIL*/
+  const [moveEffect,setMoveEffect]=useState(false)
+  const [magicPenA,setMagicPenA]=useState(true)
+  const [onlyDraw,setOnlyDraw]=useState(true)
+  const [subEffect,setSubEffect]=useState(true)
+  const [sizeMagicStroke,setSizeMagicStroke]=useState(10)
+  const [directionMove,setDirectionMove]=useState({x:3,y:1.5})
+  const [squareM,setSquareM]=useState(true)
+
+  /**/
   const [drawSquare,setDrawSquare]=useState(false)
   const [drawPencil,setDrawPencil]=useState(true)
   const [drawCircle,setDrawCircle]=useState(false)
@@ -20,8 +32,38 @@ const [sizeSquare,setSizeSquare]=useState({width:100,height:100})
   const paletRef=useRef(null)
 
   const navRef=useRef()
+  const animationRef=useRef()
   const paintRef=useRef()
   const ctxRef=useRef()
+  const tabRef=useRef()
+
+class MagicPencil{
+  constructor(){
+    this.x=window.event.offsetX
+    this.y=window.event.offsetY
+    this.size=sizeMagicStroke
+
+  }
+  magicDraw(){
+    ctxRef.current.beginPath()
+ 
+    ctxRef.current.arc(this.x,this.y,this.size,0,Math.PI*2)
+    
+    ctxRef.current.fill()
+    
+    ctxRef.current.stroke()
+  }
+  effectDraw(){
+    if(this.size>1)this.size+=0.3
+  }
+  effectDrawSub(){
+    if(this.size>1)this.size-=0.3
+  }
+  moveEffect(){
+    this.x +=Math.floor(Math.random()*directionMove.x-directionMove.y)
+    this.y-=Math.floor(Math.random()*directionMove.x-directionMove.y)
+  }
+}
 
 useEffect(()=>{
 
@@ -38,6 +80,9 @@ useEffect(()=>{
   ctxRef.current=ctx
 },[])
 
+
+
+
 useEffect(()=>{
 
   ctxRef.current.strokeStyle=contour
@@ -45,6 +90,7 @@ useEffect(()=>{
   ctxRef.current.lineWidth=sizeLine
   
 },[color,sizeLine,contour])
+//*START DRAWING*//
 const startDrawing=(e)=>{
  
 let cx=e.nativeEvent.offsetX
@@ -85,16 +131,69 @@ ctxRef.current.stroke()
 
 }
 }
+//*FINISH DRAWING*//
 const finishDrawing=()=>{
-
+  setIsDraw(false)
+  tabRef.current=[]
+    cancelAnimationFrame(animationRef.current)
+  
   if(drawPencil===true){
   ctxRef.current.closePath()
   }
-setIsDraw(false)
+
   
 
 }
+//*DRAW*//
 const draw=(e)=>{
+
+  if(magicPencilActive===true && isDraw===true){
+    tabRef.current=[]
+function make100(){
+  for(let i=0;i<1;i++){
+    tabRef.current.push(new MagicPencil())
+  }
+}
+make100()
+function magicPencilOnlyDraw(){
+  for(let i=0;i<1;i++){
+    tabRef.current[i].magicDraw()
+    // tabRef.current[i].effectDrawSub()
+    // tabRef.current[i].moveEffect()
+  }
+}
+function drawMoveEffect(){
+  for(let i=0;i<1;i++){
+    tabRef.current[i].magicDraw()
+    // tabRef.current[i].effectDraw()
+  
+    tabRef.current[i].moveEffect()
+  }
+}
+function subDrawEffect(){
+  for(let i=0;i<1;i++){
+    tabRef.current[i].magicDraw()
+    // tabRef.current[i].effectDraw()
+  
+    tabRef.current[i].moveEffect()
+    tabRef.current[i].effectDrawSub()
+  }
+}
+const animate=()=>{
+ if(onlyDraw===true){
+magicPencilOnlyDraw()
+ }
+else if(moveEffect===true){
+  drawMoveEffect()
+}
+else if(subEffect===true){
+  subDrawEffect()
+}
+ animationRef.current= requestAnimationFrame(animate)
+}
+animate()
+  }
+ 
   moveRef.current+=1
 if(!isDraw){
   return
@@ -133,18 +232,25 @@ const activeSquare=()=>{
   setDrawCircle(false)
   setInputDis(false)
   moveRef.current=0
+  setMagicPencilActive(false)
+  setMagicPenA(true)
 }
 const activePencil=()=>{
   setDrawPencil(true)
   setDrawSquare(false)
   setDrawCircle(false)
   setInputDis(false)
+  setMagicPencilActive(false)
+  setSizeLine(10)
+  setMagicPenA(true)
 }
 const activeCircle=()=>{
   setDrawPencil(false)
   setDrawSquare(false)
   setDrawCircle(true)
   setInputDis(true)
+  setMagicPencilActive(false)
+  setMagicPenA(true)
 }
 
 const colorPaletStroke=()=>{
@@ -161,8 +267,35 @@ if(strokeColor===false){
 }
 const cleanPage=()=>{
   ctxRef.current.clearRect(0,0,10000,10000)
+  setMagicPencilActive(false)
+  setIsDraw(false)
 }
-console.log(color)
+/*MagicPencil*/
+const getMagicPencil=()=>{
+  setMagicPencilActive(true)
+  setDrawPencil(false)
+  setDrawSquare(false)
+  setDrawCircle(false)
+  setInputDis(false)
+  setSizeLine(1)
+  setMoveEffect(false)
+  setOnlyDraw(true)
+  setSubEffect(false)
+  setMagicPenA(false)
+
+}
+const getMoveEffect=()=>{
+  setMoveEffect(true)
+  setOnlyDraw(false)
+  setSubEffect(false)
+}
+const getSubEffect=()=>{
+  setMoveEffect(false)
+  setOnlyDraw(false)
+  setSubEffect(true)
+}
+/**/ 
+console.log(moveEffect)
   return <div className="paint" ref={paintRef}>
   <div className="dashboard"  ref={navRef}>
     <div className="colorsToPaintContainer">
@@ -192,7 +325,7 @@ console.log(color)
   
     <br/>
     <div className="widthLine">
-      <button disabled={btnDis} onClick={()=>changeSizeLineSub()}>←</button><span> LINE <em >{sizeLine}</em> WIDTH</span>
+      <button disabled={btnDis} onClick={()=>changeSizeLineSub()}>←</button><span><em >{sizeLine}</em></span>
       <button  onClick={()=>changeSizeLineAdd()} >→</button>
     </div>
     </div>
@@ -242,6 +375,15 @@ console.log(color)
      
     
     </div>
+    <div className="magicItem">
+    <button onClick={()=>getMagicPencil()}>magicPencil</button>
+    <button disabled={magicPenA} onClick={()=>getMoveEffect()}>moveEffect</button>
+    <button disabled={magicPenA} onClick={()=>getSubEffect()}>subEffect</button>
+    <input disabled={magicPenA} type="number" placeholder="size" value={sizeMagicStroke} onChange={(e)=>setSizeMagicStroke(e.target.value)}></input>
+    <input disabled={magicPenA} type="number" placeholder="size" value={directionMove.x} onChange={(e)=>setDirectionMove({...directionMove,x:e.target.value})}></input>
+    <input disabled={magicPenA} type="number" placeholder="size" value={directionMove.y} onChange={(e)=>setDirectionMove({...directionMove,y:e.target.value})}></input>
+    </div>
+    
     <img onClick={()=>activePencil()} className="kitTool" src={pedzel}alt="pedzel" ></img>
 <img onClick={()=>cleanPage()} className="kitTool"  src={kosz} alt="kosz"></img>
     </div>
