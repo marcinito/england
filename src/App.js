@@ -8,6 +8,7 @@ import Main from './components/Main';
 import Books from './components/Books';
 import Paint from './components/Paint';
 import CanvasIndex from './components/CanvasIndex';
+import "./fontello/css/fontello.css"
 function App() {
   const containerRef=useRef()
   const [bgc,setBgc]=useState(false)
@@ -21,6 +22,7 @@ containerRef.current.classList.remove("containerDay")
       containerRef.current.classList.add("containerDay")
     }
   })
+ 
   return <div className="container" >
 <NavBar set={setBgc} />
 
@@ -34,7 +36,9 @@ containerRef.current.classList.remove("containerDay")
     <Route path="paint" element={<Paint/>}/>
   </Route>
 </Routes>
+
 <div className="media">
+
   <div className="facebook"><a className="linkss" href="https://www.facebook.com/">FACEBOOK</a></div>
   <div className="youtube"><a className="linkss" href="https://www.youtube.com/">YOUTUBE</a></div>
   <div className="google"><a className="linkss" href="https://www.google.pl/">GOOGLE</a></div>

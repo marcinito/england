@@ -3,6 +3,7 @@ import React,{useEffect,useRef} from 'react';
 function CanvasIndex() {
   const canvasRef=useRef(null)
   const ctxRef=useRef(null)
+  const cancelAnimationRef=useRef(null)
 
   class Particle {
     constructor(){
@@ -59,7 +60,7 @@ console.log(tablica)
 let timestamps =0
 let frame=0
   const animate=(frame)=>{
-    console.log(timestamps)
+   
 timestamps++
 if(timestamps%10===0){
 
@@ -69,9 +70,13 @@ ctxRef.current.clearRect(0,0,1500,1500)
 
 
 }
-        requestAnimationFrame(animate)
+        cancelAnimationRef.current=requestAnimationFrame(animate)
       }
       animate()
+
+return ()=>{
+  cancelAnimationFrame(cancelAnimationRef.current)
+}
 
 })
 

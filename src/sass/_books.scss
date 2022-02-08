@@ -1,3 +1,4 @@
+@include mq(small){
 .bookContainer{
 width:100%;
    height:90%;
@@ -29,4 +30,73 @@ width:100%;
     min-height:20%;
     width:100%;
     
+}
+}
+@include mq(lsmall){
+    .bookContainer{
+        width:100%;
+           height:90%;
+            margin:0 auto;
+            overflow-y:scroll;
+          
+            
+        }
+        .h1TitleBook{
+            text-align:center;
+            -webkit-text-stroke:1px red;
+            margin-top:2%;
+        }
+        .bookExample{
+            text-align: center;
+        }
+        .bookImg{
+            width:50%;
+            
+        }
+        .titleBook{
+            color:darkred;
+        }
+        .describeBook{
+            font-size:1rem;
+            color:darken(gray,20%)
+        }
+        .footer{
+            min-height:20%;
+            width:100%;
+            
+        }
+}
+@include mq(medium){
+    .bookContainer{
+        width:100%;
+           height:90%;
+            margin:0 auto;
+            overflow-y:scroll;
+          
+            
+        }
+        .h1TitleBook{
+            text-align:center;
+            -webkit-text-stroke:1px red;
+            margin-top:2%;
+        }
+        .bookExample{
+            display:flex;
+        }
+        .bookImg{
+            width:30%;
+            
+        }
+        .titleBook{
+            color:darkred;
+        }
+        .describeBook{
+            font-size:2rem;
+            color:darken(gray,20%)
+        }
+        .footer{
+            min-height:20%;
+            width:100%;
+            
+        }
 }

@@ -1,7 +1,7 @@
 $breakpoints:(
     small:(min-width:320px),
-    lsmall:(min-width:450px),
-    medium:(min-width:6000px),
+    lsmall:(min-width:512px),
+    medium:(min-width:742px),
 );
 @mixin mq($breakpoint){
     $size:map-get($breakpoints,$breakpoint);

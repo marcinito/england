@@ -1,5 +1,5 @@
 {
-  "homepage":"https://marcinito.github.io/england/",
+  "homepage": "https://marcinito.github.io/england/",
   "name": "marcin",
   "version": "0.1.0",
   "private": true,
@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "fontello-cli": "^0.6.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
