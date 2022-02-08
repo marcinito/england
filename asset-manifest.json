@@ -1,20 +1,26 @@
 {
   "files": {
-    "main.css": "/england/static/css/main.8e1c74ac.css",
-    "main.js": "/england/static/js/main.d57459f2.js",
+    "main.css": "/england/static/css/main.e1950a58.css",
+    "main.js": "/england/static/js/main.83c6d8c3.js",
     "static/media/church.jpg": "/england/static/media/church.4053990827635dff0f0d.jpg",
     "static/media/napoleon.jpg": "/england/static/media/napoleon.a1a54b1fabaa7fb36c3d.jpg",
     "static/media/harry.jpg": "/england/static/media/harry.01f3fcc762bacac3dd54.jpg",
+    "static/media/spray.jpg": "/england/static/media/spray.67ada65fdf7e0edf244f.jpg",
     "static/media/pedzel.jpg": "/england/static/media/pedzel.fb69261814e8717ae804.jpg",
     "static/media/wladca.jpg": "/england/static/media/wladca.69bc53fdc569d63ca07a.jpg",
     "static/media/wiedzmin.jpg": "/england/static/media/wiedzmin.53fbd1d4ea5083387f42.jpg",
     "static/media/kosz.jpg": "/england/static/media/kosz.f5ac005fb0398512846e.jpg",
+    "static/media/fontello.eot?15357217": "/england/static/media/fontello.c6e4045ceec56122ee89.eot",
+    "static/media/fontello.ttf?15357217": "/england/static/media/fontello.045ffeaebc6e9a0521d3.ttf",
+    "static/media/fontello.woff?15357217": "/england/static/media/fontello.0fb639f79ac45837e334.woff",
+    "static/media/fontello.woff2?15357217": "/england/static/media/fontello.145a8c02eb6741a20edb.woff2",
+    "static/media/fontello.svg?15357217": "/england/static/media/fontello.4da8c56fe94adc0c11b2.svg",
     "index.html": "/england/index.html",
-    "main.8e1c74ac.css.map": "/england/static/css/main.8e1c74ac.css.map",
-    "main.d57459f2.js.map": "/england/static/js/main.d57459f2.js.map"
+    "main.e1950a58.css.map": "/england/static/css/main.e1950a58.css.map",
+    "main.83c6d8c3.js.map": "/england/static/js/main.83c6d8c3.js.map"
   },
   "entrypoints": [
-    "static/css/main.8e1c74ac.css",
-    "static/js/main.d57459f2.js"
+    "static/css/main.e1950a58.css",
+    "static/js/main.83c6d8c3.js"
   ]
 }
