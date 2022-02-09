@@ -7,8 +7,8 @@
 
 @media (min-width: 320px) {
   .container {
-    -webkit-box-sizing: content-box;
-            box-sizing: content-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     max-width: 100vw;
     height: 100vh;
     margin-left: auto;
@@ -114,8 +114,8 @@
 /* L SMAL ..........................................................*/
 @media (min-width: 512px) {
   .container {
-    -webkit-box-sizing: content-box;
-            box-sizing: content-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     max-width: 80vw;
     height: 100vh;
     margin-left: auto;
@@ -221,8 +221,8 @@
 /*MEDIUM........................................*/
 @media (min-width: 742px) {
   .container {
-    -webkit-box-sizing: content-box;
-            box-sizing: content-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     max-width: 80vw;
     height: 100vh;
     margin-left: auto;
@@ -234,7 +234,6 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    overflow: hidden;
   }
   .containerNight {
     -webkit-transition: background-color 3s;
@@ -757,274 +756,24 @@
   }
 }
 
-@media (min-width: 320px) {
-  .paint {
-    width: 100vw;
-    height: 80vh;
-    position: relative;
-    top: 0;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    overflow: hidden;
-  }
-  .dashboard {
-    width: 100vw;
-    height: 30%;
-    background-color: #9a9a9a;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-  }
-  #canvas1 {
-    background-color: white;
-  }
-  .colorsToPaintContainer {
-    width: 35%;
-    border: 1px solid black;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -ms-flex-line-pack: justify;
-        align-content: space-between;
-  }
-  .colorToPaint {
-    width: 15px;
-    height: 15px;
-    border: 1px solid black;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-  }
-  .widthLine {
-    width: 100%;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    border: 1px solid black;
-    background-color: white;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .widthLine span {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .widthLine button {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-  }
-  .widthLine em {
-    color: cyan;
-    font-weight: bold;
-    -webkit-text-stroke: 1px red;
-  }
-  .shapes {
-    width: 40%;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    border: 3px solid green;
-  }
-  .suwak {
-    border: 1px solid black;
-    height: 15%;
-    width: 100%;
-  }
-  .suwakBtn {
-    position: relative;
-  }
-  .palet {
-    width: 10%;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    background-color: #b3b3b3;
-    border: 1px solid darkblue;
-    position: absolute;
-    opacity: 0;
-    z-index: -10;
-  }
-  .paletactive {
-    z-index: 1;
-    opacity: 1;
-  }
-  .kitTool {
-    width: 20%;
-    height: 30%;
-    border: 1px solid black;
-  }
-  .magicItem {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: 20%;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    width: 20%;
-  }
-  .magicItem input {
-    width: 40%;
-    text-align: center;
-    color: darkgreen;
-  }
-  .shapePencil {
-    font-size: 1rem;
-    width: 20%;
-  }
+.paint {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 80vh;
+  width: 80vw;
+  background-color: skyblue;
 }
 
-@media (min-width: 512px) {
-  .paint {
-    width: 100vw;
-    height: 84vh;
-    position: relative;
-    top: 0;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    overflow: hidden;
-  }
-  .dashboard {
-    width: 80vw;
-    height: 30%;
-    background-color: #9a9a9a;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-  }
-  #canvas1 {
-    background-color: white;
-  }
-  .colorsToPaintContainer {
-    width: 35%;
-    border: 1px solid black;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -ms-flex-line-pack: justify;
-        align-content: space-between;
-  }
-  .colorToPaint {
-    width: 15px;
-    height: 15px;
-    border: 1px solid black;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-  }
-  .widthLine {
-    width: 100%;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    border: 1px solid black;
-    background-color: white;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .widthLine span {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .widthLine button {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-  }
-  .widthLine em {
-    color: cyan;
-    font-weight: bold;
-    -webkit-text-stroke: 1px red;
-  }
-  .shapes {
-    width: 40%;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    border: 3px solid green;
-  }
-  .suwak {
-    border: 1px solid black;
-    height: 15%;
-    width: 100%;
-  }
-  .suwakBtn {
-    position: relative;
-  }
-  .palet {
-    width: 10%;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    background-color: #b3b3b3;
-    border: 1px solid darkblue;
-    position: absolute;
-    opacity: 0;
-    z-index: -10;
-  }
-  .paletactive {
-    z-index: 1;
-    opacity: 1;
-  }
-  .kitTool {
-    width: 20%;
-    height: 30%;
-    border: 1px solid black;
-  }
-  .magicItem {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: 20%;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    width: 20%;
-  }
-  .magicItem input {
-    width: 40%;
-    text-align: center;
-    color: darkgreen;
-  }
-  .shapePencil {
-    font-size: 1rem;
-    width: 20%;
-  }
+.dashboard {
+  height: 10%;
+}
+
+#canvasPaint {
+  border: 5px solid black;
+  border-right: 5px solid red;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: plum;
 }
 
 @media (min-width: 320px) {

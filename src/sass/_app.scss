@@ -1,6 +1,6 @@
 @include mq(small){
     .container{
-        box-sizing: content-box;
+        box-sizing: border-box;
         
         max-width:100vw;
         height:100vh;
@@ -76,7 +76,7 @@ main{
 /* L SMAL ..........................................................*/
 @include mq(lsmall){
     .container{
-        box-sizing: content-box;
+        box-sizing: border-box;
       
         max-width:80vw;
         height:100vh;
@@ -151,7 +151,7 @@ main{
 /*MEDIUM........................................*/
 @include mq(medium){
     .container{
-        box-sizing: content-box;
+        box-sizing: border-box;
       
         max-width:80vw;
         height:100vh;
@@ -159,7 +159,7 @@ main{
        margin-right:auto;
         display:flex;
         flex-direction:column;
-        overflow:hidden;
+      
        
     }
     .containerNight{
