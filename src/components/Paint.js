@@ -34,17 +34,24 @@ useEffect(()=>{
 })
 
 
-const mouseDown=()=>{
+const mouseDown=(e)=>{
 setIsDraw(true)
+let coX=e.offsetX
+let coY=e.offsetY
 contextRef.current.beginPath()
+contextRef.current.moveTo(coX,coY)
 
 }
-const draw=()=>{
+const draw=(e)=>{
+  let coX=e.offsetX
+let coY=e.offsetY
 if(pencil && isDraw){
  
-  
+  contextRef.current.beginPath()
+contextRef.current.moveTo(coX,coY)
 
-  contextRef.current.arc(mouseRef.current.x,mouseRef.current.y,30,0,Math.PI*2)
+  contextRef.current.arc(coX,coY,30,0,Math.PI*2)
+  contextRef.current.fill()
 
   contextRef.current.stroke()
   console.log("siema")
