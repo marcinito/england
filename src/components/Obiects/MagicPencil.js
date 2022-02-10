@@ -1,27 +1,31 @@
 export default class MagicPencil{
-    constructor(ctxRef,sizeLine,directionMove){
+    constructor(contextRef,sizeObject){
       this.x=window.event.offsetX
       this.y=window.event.offsetY
-      this.size=sizeLine
+      this.size=20
   
     }
-    magicDraw(ctxRef){
-      ctxRef.current.beginPath()
+    magicDraw(contextRef){
+      contextRef.current.beginPath()
    
-      ctxRef.current.arc(this.x,this.y,this.size,0,Math.PI*2)
+      contextRef.current.arc(this.x,this.y,this.size,0,Math.PI*2)
       
-      ctxRef.current.fill()
+      contextRef.current.fill()
       
-      ctxRef.current.stroke()
+      contextRef.current.stroke()
     }
-    effectDraw(){
-      if(this.size>1)this.size+=0.3
+
+    effectDrawSub(arrayRef){
+      if(this.size>5){this.size-=0.3}
+      if(this.size<5){this.size-=0.3}
+    
+      
+
     }
-    effectDrawSub(){
-      if(this.size>1)this.size-=0.3
-    }
-    moveEffect(directionMove){
-      this.x +=Math.floor(Math.random()*directionMove.x-directionMove.y)
-      this.y-=Math.floor(Math.random()*directionMove.x-directionMove.y)
+    moveEffect(){
+      
+      this.y-=1
+      this.x+=0.1
+      
     }
   }

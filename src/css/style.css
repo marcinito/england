@@ -766,6 +766,10 @@
 
 .dashboard {
   height: 10%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 #canvasPaint {
@@ -774,6 +778,49 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: plum;
+}
+
+.palet {
+  border: 1px solid black;
+  width: 13%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.colorToPaint {
+  width: 15px;
+  height: 15px;
+}
+
+.sizeStroke {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50%;
+}
+
+.wskaznik {
+  width: 100px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  color: orange;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
+  background-color: green;
 }
 
 @media (min-width: 320px) {
