@@ -2,7 +2,7 @@ export default class MagicPencil{
     constructor(contextRef,sizeObject){
       this.x=window.event.offsetX
       this.y=window.event.offsetY
-      this.size=20
+      this.size=5
   
     }
     magicDraw(contextRef){
@@ -24,8 +24,9 @@ export default class MagicPencil{
     }
     moveEffect(){
       
-      this.y-=1
-      this.x+=0.1
+      this.y-=Math.floor(Math.random()*3-1.5)
+      this.x-=Math.floor(Math.random()*3-1.5)
+     
       
     }
   }
