@@ -9,6 +9,8 @@ this.size=0.01
 
     draw(contextRef){
         contextRef.current.beginPath()
+        contextRef.current.lineWidth=this.size
+
         contextRef.current.fillStyle="red"
 
         contextRef.current.arc(this.x,this.y,this.size,0,Math.PI*2)

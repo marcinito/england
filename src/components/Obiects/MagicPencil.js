@@ -1,20 +1,30 @@
 export default class MagicPencil{
-    constructor(contextRef,sizeObject){
-      this.x=window.event.offsetX
-      this.y=window.event.offsetY
-      this.size=5
+    constructor(contextRef,x,y,size){
+      this.x=x
+      this.y=y
+      this.size=size
   
     }
     magicDraw(contextRef){
       contextRef.current.beginPath()
+    
+ 
+      
    
       contextRef.current.arc(this.x,this.y,this.size,0,Math.PI*2)
       
       contextRef.current.fill()
       
+      
       contextRef.current.stroke()
     }
 
+    magicSquare(contextRef){
+
+      contextRef.current.fillRect(this.x,this.y,this.size,this.size)
+      
+      contextRef.current.stroke()
+    }
     effectDrawSub(arrayRef){
       if(this.size>5){this.size-=0.3}
       if(this.size<5){this.size-=0.3}
