@@ -449,7 +449,7 @@ console.log(exit)
       <div className="info" ref={infoCloseRef}>
         <button className="closeBtn" onClick={(e)=>closed(e)}>X</button>
         <div className="slide">
-        <img src={infoRef.current[index]} alt="info"></img>
+        <img className="imgInfo" src={infoRef.current[index]} alt="info"></img>
         </div>
         <br/>
         <div className="btnInfo">
