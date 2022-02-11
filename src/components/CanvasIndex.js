@@ -5,6 +5,15 @@ function CanvasIndex() {
   const ctxRef=useRef(null)
   const cancelAnimationRef=useRef(null)
 
+  const mouse={
+    x:null,
+  }
+useEffect(()=>{
+canvasRef.current.addEventListener("mousemove",(e)=>{
+mouse.x=e.offsetX
+mouse.y=e.offsetY
+})
+})
   class Particle {
     constructor(){
       this.size=Math.floor(Math.random()*15)
@@ -25,6 +34,14 @@ function CanvasIndex() {
     went(){
 this.x+=this.speedX
 this.y+=this.speedY
+    }
+    check(){
+      let dx=mouse.x-this.x
+      let dy=mouse.y-this.y
+      let distance=Math.sqrt(dx*dx+dy*dy)
+      if(distance<100){
+       
+      }
     }
   }
   useEffect(()=>{
@@ -58,9 +75,15 @@ console.log(tablica)
   makeParticle()
 
 let timestamps =0
-let frame=0
+
+function checkDis(){
+  for(let i=0;i<tablica.length;i++){
+    tablica[i].check()
+  }
+}
+
   const animate=(frame)=>{
-   
+   checkDis()
 timestamps++
 if(timestamps%10===0){
 

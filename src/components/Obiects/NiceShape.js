@@ -11,11 +11,11 @@ this.size=0.01
         contextRef.current.beginPath()
         contextRef.current.lineWidth=this.size
 
-        contextRef.current.fillStyle="red"
+        contextRef.current.fillStyle="black"
 
         contextRef.current.arc(this.x,this.y,this.size,0,Math.PI*2)
         contextRef.current.fill()
-        contextRef.current.stroke()
+      
         contextRef.current.closePath()
     
 

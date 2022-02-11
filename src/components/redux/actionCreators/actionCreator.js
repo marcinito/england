@@ -24,3 +24,8 @@ export const subWordToLearn=(yo)=>{
 
 
 }
+export const off=()=>{
+    return {
+        type:"EXIT"
+    }
+}

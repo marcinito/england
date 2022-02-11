@@ -8,7 +8,7 @@ import Main from './components/Main';
 import Books from './components/Books';
 import Paint from './components/Paint';
 import CanvasIndex from './components/CanvasIndex';
-import "./fontello/css/fontello.css"
+import "./font/css/fontello.css"
 function App() {
   const containerRef=useRef()
   const [bgc,setBgc]=useState(false)
