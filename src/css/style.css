@@ -783,9 +783,7 @@
     background-color: skyblue;
   }
   .dashboard {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
+    height: 30%;
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
