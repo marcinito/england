@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/england/static/css/main.14fe5b38.css",
-    "main.js": "/england/static/js/main.cb88b592.js",
+    "main.css": "/england/static/css/main.d66872f2.css",
+    "main.js": "/england/static/js/main.2faaeca6.js",
     "static/media/drzewo.png": "/england/static/media/drzewo.0cf75dc2353e597df9ee.png",
     "static/media/krzak.png": "/england/static/media/krzak.6554f0c6aeaf62d89e75.png",
     "static/media/church.jpg": "/england/static/media/church.4053990827635dff0f0d.jpg",
@@ -19,11 +19,11 @@
     "static/media/fontello.woff?82508032": "/england/static/media/fontello.10fcf5023953634384c1.woff",
     "static/media/fontello.woff2?82508032": "/england/static/media/fontello.cf95f78f45e41c28b016.woff2",
     "index.html": "/england/index.html",
-    "main.14fe5b38.css.map": "/england/static/css/main.14fe5b38.css.map",
-    "main.cb88b592.js.map": "/england/static/js/main.cb88b592.js.map"
+    "main.d66872f2.css.map": "/england/static/css/main.d66872f2.css.map",
+    "main.2faaeca6.js.map": "/england/static/js/main.2faaeca6.js.map"
   },
   "entrypoints": [
-    "static/css/main.14fe5b38.css",
-    "static/js/main.cb88b592.js"
+    "static/css/main.d66872f2.css",
+    "static/js/main.2faaeca6.js"
   ]
 }
