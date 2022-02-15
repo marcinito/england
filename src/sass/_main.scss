@@ -60,6 +60,16 @@
         font-size:1.5rem;
 
     }
+    .todo{
+        height:10%;
+        flex-grow:1;
+        display:flex;
+        justify-content: center;
+        height:50%;
+        align-items: center;
+        border:1px solid black;
+        font-size:1.5rem;
+    }
     .outletMain{
 flex-grow:1;
 

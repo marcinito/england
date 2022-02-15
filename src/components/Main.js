@@ -8,6 +8,7 @@ function Main() {
     <div className="words"><NavLink className={({isActive})=>isActive?"activeLinks":"noActiveLink"} to="words">Vocabulary</NavLink></div>
     <div className="books"><NavLink className={({isActive})=>isActive?"activeLinks":"noActiveLink"} to="books">Books</NavLink></div>
     <div className="task"><NavLink className={({isActive})=>isActive?"activeLinks":"noActiveLink"} to="paint">Paint</NavLink></div>
+    <div className="todo"><NavLink className={({isActive})=>isActive?"activeLinks":"noActiveLink"} to="to-do">To do</NavLink></div>
    
   </div>
   <div className="outletMain">

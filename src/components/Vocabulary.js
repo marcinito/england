@@ -1,17 +1,17 @@
 import React,{useState,useEffect,useRef} from 'react';
 import {useSelector,useDispatch} from 'react-redux'
-
+import {add,sub} from '../redux/words'
 
 function Vocabulary() {
  
-  const keys=useSelector(state=>state.key.key)
 
 
 
+const words=useSelector(state=>state.words)
 const dispatch=useDispatch()
 
   
- const words=useSelector(state=>state.words.worrds)
+
 
   const vocabularyRef=useRef()
   const showsRef=useRef()
@@ -27,14 +27,17 @@ index=index*1
 
 console.log(index)
 
-dispatch({type:"sub",payload:index})
+dispatch(sub({id:index}))
   
   }
-  showsRef.current=words.map((el,index)=>{
+
+
+ 
+  showsRef.current=words.map(el=>{
     return(
-      <>
-     <li className="saveWord" data-key={el.id} key={el.id} > <span className={el.important?"importantElementWords":"aW"}>{el.word}</span><span className={el.important?"importantElementTranslate":"tW"}>{el.translate}</span><button className="btnAddWord"  onClick={(e)=>deleteWords(e,e.target.parentElement.dataset.key)}>X</button></li>
-      </>
+      
+        <li data-key={el.id} key={el.id}>{el.word}{el.translate}<button onClick={(e)=>deleteWords(e,e.target.parentNode.dataset.key)}>x</button></li>
+      
     )
   })
   useEffect(()=>{
@@ -61,7 +64,7 @@ dispatch({type:"sub",payload:index})
     
      dispatch({type:"addWords"})
  
-   dispatch({type:"add",payload1:wordToLearn.word,payload2:wordToLearn.translate,payload3:Math.ceil(Math.random()*100),payload4:wordToLearn.important})
+   dispatch(add({word:wordToLearn.word,translate:wordToLearn.translate,important:wordToLearn.important,id:Math.floor(Math.random()*100)}))
 
 
     }
@@ -99,8 +102,8 @@ setTimeout(()=>{
   
 
  
+
 console.log(words)
-console.log(wordToLearn.important)
  
   return <div className="vocabulary" ref={vocabularyRef} >
       

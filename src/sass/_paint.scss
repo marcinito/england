@@ -6,7 +6,7 @@ height:100vh;
     background-color: skyblue;
 }
 .dashboard{
-    height:20%;
+    height:fit-content;
     width:100%;
     display:flex;
     flex-direction:column;
@@ -22,10 +22,10 @@ height:100vh;
 }
 .palet{
     border:1px solid black;
-    width:17%;
+    width:100%;
     height:50%;
     display:flex;
-    flex-wrap:wrap;
+   
 }
 .colorToPaint{
     width:15px;
@@ -38,21 +38,21 @@ height:100vh;
 .boxTools{
     display:flex;
     height:fit-content;
-    border:4px solid red;
+  
     align-items: center;
 
 }
 .effectTools{
     display:flex;
     height:fit-content;
-    border:4px solid red;
+  
     align-items: center;
 }
 .btnkit{
     align-self: flex-start;
 }
 .lineWidth{
-    border:3px solid green;
+ border:1px solid black;
     display:flex;
     justify-content: space-between;
 }
@@ -89,7 +89,7 @@ height:100vh;
     color:darkred;
 }
 .info{
-    width:70%;
+    width:100%;
     height:60%;
     background-color:lighten(orange,20%);
   box-shadow:5px  5px 20px 5px darkorange;
@@ -100,30 +100,33 @@ height:100vh;
     opacity:0;
    
 }
-.imgInfo{
-    width:100%;
-}
+
 .slide{
-    width:50vw;
+    width:100vw;
     display:flex;
     justify-content: center;
 }
+.imgInfo{
+    width:100vw;
+    height:40vh;
+    
+   }
 .btnInfo{
-    font-size:0.5rem;
+    font-size:1.5rem;
     height:fit-content;
     width:100%;
     display:flex;
     justify-content: center;
 }
 .btnSlideInfo{
-    font-size:2rem;
+    font-size:3rem;
     border:none;
     outline:none;
     background-color: lighten(blue,30%);
     box-shadow:2px 2px 2px 3px black;
 }
 .closeBtn{
-    width:10px;
+    font-size:2rem;
     color:darkblue;
     font-weight:bold;
     background-color: plum;

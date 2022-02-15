@@ -9,6 +9,7 @@ import Books from './components/Books';
 import Paint from './components/Paint';
 import CanvasIndex from './components/CanvasIndex';
 import "./font/css/fontello.css"
+import TodoList from './components/TodoList';
 function App() {
   const containerRef=useRef()
   const [bgc,setBgc]=useState(false)
@@ -34,6 +35,7 @@ containerRef.current.classList.remove("containerDay")
     <Route index element={<CanvasIndex/>}/>
     <Route path="books" element={<Books/>}/>
     <Route path="paint" element={<Paint/>}/>
+    <Route path="to-do" element={<TodoList/>}/>
   </Route>
 </Routes>
 

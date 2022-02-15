@@ -9,6 +9,7 @@ import info1 from '../img/info1.png'
 import info2 from '../img/info2.png'
 import info3 from '../img/info3.png'
 import {useSelector,useDispatch} from 'react-redux'
+import {offInfo} from '../redux/paint'
 
 function Paint() {
 const [isDraw,setIsDraw]=useState(false)
@@ -22,7 +23,7 @@ const [contour,setContour]=useState("red")
 const [color,setColor]=useState("plum")
 const [img,setImg]=useState({tree:true,chmura:false,krzak:false})
 const dispatch=useDispatch()
-const exit=useSelector(state=>state.exit.exit)
+const exit=useSelector(state=>state.paint.value)
   const canvasRef=useRef(null)
   const paintRef=useRef(null)
   const contextRef=useRef(null)
@@ -344,7 +345,7 @@ imgTakeRef.current.classList.add("active")
   }
 }
 const closed=(e)=>{
-  dispatch({type:"EXIT"})
+  dispatch(offInfo())
 e.target.parentNode.remove()
 }
 
@@ -375,23 +376,17 @@ console.log(exit)
     <button className="colorToPaint" style={{backgroundColor:"greenyellow"}} onClick={()=>setColor("greenyellow")}></button>
     <button className="colorToPaint" style={{backgroundColor:"indigo"}} onClick={()=>setColor("indigo")}></button>
     <button className="colorToPaint" style={{backgroundColor:"peru"}} onClick={()=>setColor("peru")}></button>
-    <div className="lineWidth">
+    
+     
+      </div>
+      
+      <div className="lineWidth">
        
        <button disabled={lineWidth===0?true:false}  onClick={()=>setLineWidth((lW)=>lW-1)}><i className="icon-minus"></i></button>
       <span className="lineWidthShow">{lineWidth}</span>
        <button disabled={lineWidth===20?true:false} onClick={()=>setLineWidth((lW)=>lW+1)}><i className="icon-plus"></i></button>
        <input style={{width:"25%",textAlign:"center",fontWeight:"bold"}} type="number" value={size} onChange={(e)=>setSize(e.target.value)}></input>
      </div>
-      </div>
-      
-        <div className="boxTools">
-        <button className="btnkit" onClick={()=>takeNiceShape()}><i style={{color:"dakrblue",fontWeight:"bold"}} className="icon-brush"></i></button>
-        <button className="btnkit" onClick={()=>setLineCap("round")}><i style={{color:"dakrblue",fontWeight:"bold"}} className="icon-dribbble"></i></button>
-        <button className="btnkit" onClick={()=>setLineCap("square")}><i className="icon-stop-1"></i></button>
-        <button className="btnkit" style={shadow?{backgroundColor:"black"}:{backgroundColor:"white"}} onClick={()=>setShadow(!shadow)}><em style={{fontWeight:"bold"}}>shadow</em></button>
-
-
-        </div>
         <div className="effectTools">
         <button onClick={()=>takeSpiderEffect()}><i className="icon-pencil-alt"/></button>
         <button onClick={()=>takeCircle()}><i className="icon-adjust"></i><em style={{fontWeight:"bold",color:"darkgreen"}} >cirle</em></button>
@@ -434,7 +429,7 @@ console.log(exit)
     
       <canvas id="canvasPaint" ref={canvasRef}
       onMouseDown={mouseDown}
-      onMouseMove={draw}
+      // onMouseMove={draw}
       onMouseUp={mouseUp}
       onTouchMove={draw}
       
